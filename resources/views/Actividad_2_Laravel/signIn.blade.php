@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
     <h1>{{$title}}</h1>
     <form action="{{url('/jostin/signin')}}" method="post"></form>
     @csrf
@@ -19,7 +20,7 @@
     <input type="password" id="password" name="password" required>
 
     <button type="submit">Iniciar Sesión</button>
-    </form>
+
     <!-- Enlace para ir a SignUp -->
     <p>¿No tienes una cuenta? <a href="{{ url('/marc/signup') }}">Regístrate</a></p>
 
