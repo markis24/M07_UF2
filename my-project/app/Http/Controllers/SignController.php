@@ -9,12 +9,12 @@ class SignController extends Controller
     
     public function showSignIn()
     {
-        return view('signIn')->with('title', 'Inicieu sessió amb un usuari');
+        return view('formularios.signIn')->with('title', 'Iniciar sessió amb un usuari');
     }
     
     public function showSignUp()
     {
-        return view('signUp')->with('title', 'Creació de un nou usuari');
+        return view('formularios.signUp')->with('title', "Creació d'un nou usuari");
     }
 
 }
