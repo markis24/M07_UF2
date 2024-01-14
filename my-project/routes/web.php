@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
@@ -23,6 +24,15 @@ Route::get('/', function () {
 // Ruta SingIn
 Route::get('/signin', [SignController::class, 'showSignIn'])->name('signin');
 
-
 // Ruta SignUp
 Route::get('/signup', [SignController::class, 'showSignUp'])->name('signup');
+
+// Ruta para iniciar sesion
+Route::post('/login', [LoginController::class, 'login'])
+->middleware('checkEmailAndPassword');
+
+
+// Mostramos si hay un error en la pagina de iniciar sesion
+Route::get('/error', function () {
+    return "Error d'accés";
+})->name('errorAcces.index');
