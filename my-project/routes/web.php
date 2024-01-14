@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\SignController;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
+use Spatie\FlareClient\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Ruta SingIn
+Route::get('/signin', [SignController::class, 'showSignIn'])->name('signin');
+
+
+// Ruta SignUp
+Route::get('/signup', [SignController::class, 'showSignUp'])->name('signup');
