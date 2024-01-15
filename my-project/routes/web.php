@@ -22,10 +22,10 @@ Route::get('/', function () {
 });
 
 // Ruta SingIn
-Route::get('/signin', [SignController::class, 'showSignIn'])->name('signIn');
+Route::get('/signin', [SignController::class, 'showSignIn'])->name('Sign In');
 
 // Ruta SignUp
-Route::get('/signup', [SignController::class, 'showSignUp'])->name('signUp');
+Route::get('/signup', [SignController::class, 'showSignUp'])->name('Sign Up');
 
 // Ruta para iniciar sesion
 Route::post('/login', [LoginController::class, 'login'])

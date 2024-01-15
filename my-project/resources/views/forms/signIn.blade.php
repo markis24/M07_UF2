@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <h1>{{$title}}</h1>
-        <form action="{{url('/signin')}}" method="post">
+        <form action="{{ route('Sign In')}}" method="post">
             @csrf
             <!--campos del formulario para el inicio de sesión -->
             <div class="form-group">
@@ -31,10 +31,10 @@
             <input type="submit" value="Enviar" class="btn btn-primary" />
         </form>
         <!-- Enlace para ir a SignUp -->
-        <p class="mt-3">No tens un compte? <a href="{{ url('/signup') }}">Crea un compte</a></p>
+        <p class="mt-3">No tens un compte? <a href="{{ route('Sign Up') }}">Crea un compte</a></p>
     </div>
 
-    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <!-- Bootstrap JS  -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

@@ -8,6 +8,8 @@
 </head>
 <body>
     <h1>{{$title}}</h1>
-    <p>Benvingut alumne. El teu email és {{$email}}.</p>
+    <p>Benvingut administrador. El teu email és {{$email}}.</p>
+
+    
 </body>
 </html>
