@@ -16,13 +16,13 @@ class LoginController extends Controller
 
         switch ($userType) {
             case 'professor':
-                return view('professor')->with('email', $email);
+                return view('users.professor')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
                 break;
             case 'alumne':
-                return view('alumne')->with('email', $email);
+                return view('users.alumne')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
                 break;
             case 'admin':
-                return view('centre')->with('email', $email);
+                return view('admin.centre')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
                 break;
             default:
                 return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
@@ -33,7 +33,7 @@ class LoginController extends Controller
     {
 
         $professors = ['professor1@example.com', 'professor2@example.com'];
-        $alumnes = ['alumne1@example.com', 'alumne2@example.com'];
+        $alumnes = ['alumne1@iticbcn.cat', 'alumne2@example.com'];
         $admins = ['admin1@example.com', 'admin2@example.com'];
 
         if (in_array($email, $professors)) {
