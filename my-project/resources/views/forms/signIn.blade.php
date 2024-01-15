@@ -11,7 +11,7 @@
 <body>
     <div class="container mt-5">
         <h1>{{$title}}</h1>
-        <form action="{{ route('Sign In')}}" method="post">
+        <form action="{{ route('signin.create')}}" method="post">
             @csrf
             <!--campos del formulario para el inicio de sesión -->
             <div class="form-group">
@@ -31,7 +31,7 @@
             <input type="submit" value="Enviar" class="btn btn-primary" />
         </form>
         <!-- Enlace para ir a SignUp -->
-        <p class="mt-3">No tens un compte? <a href="{{ route('Sign Up') }}">Crea un compte</a></p>
+        <p class="mt-3">No tens un compte? <a href="{{ route('signup.create') }}">Crea un compte</a></p>
     </div>
 
     <!-- Bootstrap JS  -->
