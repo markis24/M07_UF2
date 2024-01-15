@@ -9,7 +9,7 @@
 <body>
     <h1>{{$title}}</h1>
     <h2>Benvingut administrador. El teu email és {{$email}}.</h2>
-    <h4>Llista de professors</h4>
+    <h4>Llista de prof</h4>
 
     <table>
         <thead>
@@ -22,12 +22,12 @@
         </thead>
     <tbody>
 
-    @foreach ($collection as $item)
+    @foreach ($professors as $prof)
         <tr>
-            <td>{{$professors['id']}}</td>
-            <td>{{$professors['nom']}}</td>
-            <td>{{$professors['email']}}</td>
-            <td>{{$professors['curs']}}</td>
+            <td>{{$prof['id']}}</td>
+            <td>{{$prof['nom']}}</td>
+            <td>{{$prof['email']}}</td>
+            <td>{{$prof['curs']}}</td>
         </tr>
     @endforeach
 </tbody>
