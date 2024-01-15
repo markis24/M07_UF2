@@ -8,8 +8,29 @@
 </head>
 <body>
     <h1>{{$title}}</h1>
-    <p>Benvingut administrador. El teu email és {{$email}}.</p>
+    <h2>Benvingut administrador. El teu email és {{$email}}.</h2>
+    <h4>Llista de professors</h4>
 
-    
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>email</th>
+                <th>curs</th>
+            </tr>
+        </thead>
+    <tbody>
+
+    @foreach ($collection as $item)
+        <tr>
+            <td>{{$professors['id']}}</td>
+            <td>{{$professors['nom']}}</td>
+            <td>{{$professors['email']}}</td>
+            <td>{{$professors['curs']}}</td>
+        </tr>
+    @endforeach
+</tbody>
+</table>
 </body>
 </html>
