@@ -15,6 +15,7 @@ class SignController extends Controller
     public function showSignUp()
     {
         return view('forms.signUp')->with('title', "Creació d'un nou usuari");
+        
     }
 
 }
