@@ -21,6 +21,7 @@ class checkEmailAndPassword
             return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
         }
         return $next($request);
+        
     }
 }
 
