@@ -7,46 +7,43 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function login(Request $request)
+    
     {
-        // Comprobar email y password 
         $email = $request->input('email');
-        
-        $userType = '';
-        // Realiza la comprobación directamente en el bloque switch
-        switch ($email) {
-            case 'professor1@iticbcn.cat':
-            case 'professor2@iticbcn.cat':
-                $userType = 'profesor'; // Si es un profesor, establecer el tipo de usuario como 'profesor'
-                break;
-            case 'alumno1@iticbcn.cat':
-            case 'alumno2@iticbcn.cat':
-                $userType = 'alumno'; // Si es un alumno, establecer el tipo de usuario como 'alumno'
-                break;
-            case 'admin1@iticbcn.cat':
-            case 'admin2@iticbcn.cat':
-                $userType = 'admin'; // Si es un administrador, establecer el tipo de usuario como 'admin'
-                break;
-            default:
-                // Manejar caso por defecto o redirigir con mensaje de error
-                return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
-                break;
-        }
+        $password = $request->input('password');
 
-        // Según el tipo de usuario, mostrar la vista correspondiente
+        $userType = $this->getUserType($email);
+
         switch ($userType) {
-            case 'admin':
-                return view('admin.centre')->with('email', $email);
-                break;
-
             case 'professor':
-                return view('users.professor')->with('email', $email);
+                return view('professor')->with('email', $email);
                 break;
-            case 'alumno':
-                return view('users.alumne')->with('email', $email);
+            case 'alumne':
+                return view('alumne')->with('email', $email);
+                break;
+            case 'admin':
+                return view('centre')->with('email', $email);
                 break;
             default:
-                return redirect()->route('errorAcces.index'); // Si el tipo de usuario no es reconocido, redirigir a la ruta de error
-                break;
+                return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
+            }
+    }
+
+    private function getUserType($email)
+    {
+
+        $professors = ['professor1@example.com', 'professor2@example.com'];
+        $alumnes = ['alumne1@example.com', 'alumne2@example.com'];
+        $admins = ['admin1@example.com', 'admin2@example.com'];
+
+        if (in_array($email, $professors)) {
+            return 'professor';
+        } elseif (in_array($email, $alumnes)) {
+            return 'alumne';
+        } elseif (in_array($email, $admins)) {
+            return 'admin';
+        } else {
+            return 'default';
         }
     }
 }
