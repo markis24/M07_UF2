@@ -17,5 +17,15 @@ class SignController extends Controller
         return view('forms.signUp')->with('title', "Creació d'un nou usuari");
         
     }
+    public function SignIn(Request $request){
+        //dd(request());
+
+    }
+    public function SignUp(Request $request){
+        //dd(request());
+        return redirect()->route('signin.index');
+
+    }
+    
 
 }
