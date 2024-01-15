@@ -18,7 +18,7 @@ class SignController extends Controller
         
     }
     public function SignIn(Request $request){
-        //dd(request());
+        
 
     }
     public function SignUp(Request $request){
