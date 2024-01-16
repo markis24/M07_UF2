@@ -32,8 +32,8 @@ class LoginController extends Controller
     private function getUserType($email)
     {
 
-        $professors = ['oril@iticbcn.cat', 'joan@iticbcn.cat' ,'roger@iticbcn.cat','carlota@iticbcn.cat'  ];
-        $alumnes = ['alumne1@iticbcn.cat', 'alumne2@iticbcn.cat','jostin@iticbcn.cat'];
+        $professors = ['oril@iticbcn.cat' ,'roger@iticbcn.cat','carlota@iticbcn.cat'  ];
+        $alumnes = ['bilal@iticbcn.cat', 'alumne2@iticbcn.cat','jostin@iticbcn.cat'];
         $admins = ['admin@iticbcn.cat', 'admin2@iticbcn.cat'];
 
         if (in_array($email, $professors)) {
@@ -46,4 +46,5 @@ class LoginController extends Controller
             return 'default';
         }
     }
+
 }
