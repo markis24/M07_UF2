@@ -13,7 +13,8 @@
     <div class="container mt-5">
         <h1>{{$title}}</h1>
         <form action="{{ route('signup.create')}}" method="post">
-            @csrf
+            @csrf 
+            <!-- En parte 4 quitar campo ID del formulario-->
             <div class="form-group">
                 <label for="user_id">Número ID</label>
                 <input type="text" name="user_id" id="user_id" class="form-control" />
