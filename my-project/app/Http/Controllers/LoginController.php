@@ -32,9 +32,9 @@ class LoginController extends Controller
     private function getUserType($email)
     {
 
-        $professors = ['professor1@iticbcn.cat', 'professor2@iticbcn.cat'];
-        $alumnes = ['alumne1@iticbcn.cat', 'alumne2@iticbcn.cat'];
-        $admins = ['admin1@iticbcn.cat', 'admin2@iticbcn.cat'];
+        $professors = ['oril@iticbcn.cat', 'joan@iticbcn.cat' ,'roger@iticbcn.cat','carlota@iticbcn.cat'  ];
+        $alumnes = ['alumne1@iticbcn.cat', 'alumne2@iticbcn.cat','jostin@iticbcn.cat'];
+        $admins = ['admin@iticbcn.cat', 'admin2@iticbcn.cat'];
 
         if (in_array($email, $professors)) {
             return 'professor';
