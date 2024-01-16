@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class LoginController extends Controller
 {
     public function login(Request $request)
-    
+
     {
         $email = $request->input('email');
         $password = $request->input('password');
@@ -26,14 +26,15 @@ class LoginController extends Controller
                 break;
             default:
                 return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
-            }
+        }
     }
 
     private function getUserType($email)
     {
 
-        $professors = ['oril@iticbcn.cat', 'joan@iticbcn.cat' ,'roger@iticbcn.cat','carlota@iticbcn.cat'  ];
-        $alumnes = ['alumne1@iticbcn.cat', 'alumne2@iticbcn.cat','jostin@iticbcn.cat'];
+        $professors = ['oriol@iticbcn.cat','roger@iticbcn.cat', 'carlota@iticbcn.cat' ];
+        
+        $alumnes = ['bilal@iticbcn.cat', 'marco@iticbcn.cat', 'jostin@iticbcn.cat'];
         $admins = ['admin@iticbcn.cat', 'admin2@iticbcn.cat'];
 
         if (in_array($email, $professors)) {
