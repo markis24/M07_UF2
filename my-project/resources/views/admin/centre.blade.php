@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$title}}</title>
 </head>
 <body>
-    <h1>{{$title}}</h1>
-    <h2>Benvingut administrador. El teu email és {{$email}}.</h2>
-    <h4>Llista de prof</h4>
+    <h1>Benvingut administrador. El teu email és {{$email}}.</h1>
+    <h4>Llista de professors</h4>
 
     <table>
         <thead>

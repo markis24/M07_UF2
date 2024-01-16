@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>{{$title}}</title>
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <h1>{{$title}}</h1>
-        <p>Benvingut alumne. El teu email és {{$email}}.</p>
+        <h1>Benvingut alumne. El teu email és {{$email}}.</h1>
     </div>
 
     <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
