@@ -14,11 +14,7 @@
         <h1>{{$title}}</h1>
         <form action="{{ route('signup.create')}}" method="post">
             @csrf 
-            <!-- En parte 4 quitar campo ID del formulario-->
-            <div class="form-group">
-                <label for="user_id">Número ID</label>
-                <input type="text" name="user_id" id="user_id" class="form-control" />
-            </div>
+            <!-- En parte 4 hay que quitar el campo ID del formulario-->
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" />
@@ -50,7 +46,7 @@
             <input type="submit" value="Enviar" class="btn btn-primary" />
         </form>
         <!-- Enlace para ir a SignIn -->
-        <p class="mt-3">¿Tens un compte? <a href="{{ route('signin.index') }}">Iniciar sessió</a></p>
+        <p class="mt-3"><a href="{{ route('signin.index') }}">Iniciar sessió usuari</a></p>
     </div>
 
     <!-- Bootstrap JS -->

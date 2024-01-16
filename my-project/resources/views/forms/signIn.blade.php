@@ -31,7 +31,7 @@
             <input type="submit" value="Enviar" class="btn btn-primary" />
         </form>
         <!-- Enlace para ir a SignUp -->
-        <p class="mt-3">No tens un compte? <a href="{{ route('signup.create') }}">Crea un compte</a></p>
+        <p class="mt-3"><a href="{{ route('signup.create') }}">Crea usuari</a></p>
     </div>
 
     <!-- Bootstrap JS  -->
