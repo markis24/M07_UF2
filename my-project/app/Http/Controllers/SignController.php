@@ -21,11 +21,8 @@ class SignController extends Controller
         
 
     }
+
     public function SignUp(Request $request){
-        //dd(request());
-        return redirect()->route('signin.index');
-
+            return redirect()->route('signin.index');
     }
-    
-
 }
