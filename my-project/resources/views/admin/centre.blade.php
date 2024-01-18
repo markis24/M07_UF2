@@ -23,7 +23,8 @@
             <tbody class="table-primary">
                 @foreach($professors as $prof)
                 <tr>
-                    <td>{{ $prof['nom'] }}</td>
+                    <td>{{ $prof['id'] }}</td>
+                    <td>{{ $prof['name'] }}</td>
                     <td>{{ $prof['email'] }}</td>
                 </tr>
             @endforeach
