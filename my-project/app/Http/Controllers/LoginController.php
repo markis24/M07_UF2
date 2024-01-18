@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Usuari;
 
 class LoginController extends Controller
 {
     public function login(Request $request)
-
     {
         $email = $request->input('email');
         $password = $request->input('password');
 
-        $userType = $this->getUserType($email);
+        $consulta = Usuari::where("email",$email)->first();
 
-        switch ($userType) {
+
+        // $userType = $this->getUserType($email);
+
+        switch ($consulta->rol) {
             case 'professor':
                 return view('users.professor')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
                 break;
@@ -22,7 +25,10 @@ class LoginController extends Controller
                 return view('users.alumne')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
                 break;
             case 'admin':
-                return view('admin.centre')->with('email', $email)->with('title', 'Iniciar sessió amb un usuari');
+                $professors = Usuari::where("rol","professor")->get();
+                return view('admin.centre')->with('email', $email)
+                                            ->with('title', 'Iniciar sessió amb un usuari')
+                                            ->with('professors', $professors);
                 break;
             default:
                 return redirect()->route('errorAcces.index'); // Si no coincide con ningún caso, redirigir a la ruta de error
