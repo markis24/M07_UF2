@@ -11,15 +11,17 @@ class Usuari extends Model
     protected $table = 'usuaris';
 
     // Se indica los datos $fillable
-    protected $fillable = [
-        'name',
-        'surname',
-        'email',
-        'rol',
-        'actiu'
-    ];
+// En tu modelo Usuari
+protected $fillable = [
+    'name', 
+    'surname', 
+    'email', 
+    'rol', 
+    'actiu', 
+];
+
     protected $hidden = [
         'password'
-    ];
+        ];
 
 }

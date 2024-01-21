@@ -8,28 +8,53 @@
     <title>Página de Administrador</title>
 </head>
 <body class="bg-light">
-    <h3>Llista de professors</h3>
     <div class="container mt-5">
-        <br>
-        <br>
-        <table class="table">
-            <thead class="bg-info">
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">nom</th>
-                    <th scope="col">email</th>
-                </tr>
-            </thead>
-            <tbody class="table-primary">
-                @foreach($professors as $prof)
-                <tr>
-                    <td>{{ $prof['id'] }}</td>
-                    <td>{{ $prof['name'] }}</td>
-                    <td>{{ $prof['email'] }}</td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+        <!-- <h1>Benvingut administrador. El teu email és .</h1> -->
+    </div>
+    <div class="container mt-5">
+        <h3>Llista de professors</h3>
+    </div>
+
+    @if(count($professors) > 0)
+        <div class="container mt-5">
+            <table class="table">
+                <thead class="bg-info">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actiu</th>
+                        <th scope="col">Accions</th>
+                    </tr>
+                </thead>
+                <tbody class="table-primary">
+                    @foreach($professors as $prof)
+                        <tr>
+                            <td>{{ $prof['id'] }}</td>
+                            <td>{{ $prof['name'] }}</td>
+                            <td>{{ $prof['email'] }}</td>
+                            <td>{{ $prof['actiu'] }}</td>
+                            <td>
+                                <a href="{{ route('prof.edit', $prof['id']) }}" class="btn btn-primary">Editar</a>
+                                <a href="{{ route('prof.destroy', $prof['id']) }}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    @else
+        <div class="container mt-5">
+            <h3>No hi ha professors</h3>
+        </div>
+    @endif
+
+    <div class="container mt-5">
+        <p class="mt-3"><a href="{{ route('prof.create') }}" class="btn btn-primary">Crear</a></p>
+    </div>
+
+    <div class="container mt-5">
+        <p class="mt-3"><a href="{{ route('signin.index') }}" class="btn btn-danger">Log Out</a></p>
     </div>
 
     <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
