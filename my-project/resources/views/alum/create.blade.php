@@ -10,9 +10,8 @@
 </head>
 <body>
     <div class="container mt-5">
-        <form action="{{ route('signup.create')}}" method="post">
+        <form action="{{ route('alum.store')}}" method="post">
             @csrf 
-            <!-- En parte 4 hay que quitar el campo ID del formulario-->
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" />
@@ -32,18 +31,18 @@
             <div class="form-group">
                 <label for="rol">Rol</label>
                 <select name="rol" id="rol" class="form-control">
-                    <option value="alumnat">Alumne</option>
-                    <option value="professorat">Professor</option>
-                    <option value="administrador">Administrador</option>
+                    <option value="alumne"selected>Alumne</option>
+                    <option value="professor" >Professor</option>
+                    <option value="admin">Administrador</option>
                 </select>
             </div>
             <div class="form-group form-check">
-                <input type="checkbox" name="active" id="active" value="1" class="form-check-input" />
+                <input type="checkbox" name="actiu" id="actiu" value="1" class="form-check-input" />
                 <label class="form-check-label" for="active">Actiu</label>
             </div>
             <input type="submit" value="Guardar" class="btn btn-primary" />
         </form>
-        <p class="mt-3"><a href="{{ route('prof.index') }}">Tornar</a></p>
+        <p class="mt-3"><a href="{{ route('alum.index') }}">Tornar</a></p>
 
         <!-- Enlace para volver a la pagina de incio administrador -->
     </div>

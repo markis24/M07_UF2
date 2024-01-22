@@ -15,13 +15,14 @@ class Usuari extends Model
 protected $fillable = [
     'name', 
     'surname', 
+    'password',
     'email', 
     'rol', 
     'actiu', 
 ];
 
     protected $hidden = [
-        'password'
+        
         ];
 
 }

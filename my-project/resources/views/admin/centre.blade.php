@@ -15,8 +15,8 @@
         <h3>Llista de professors</h3>
     </div>
 
-    @if(count($professors) > 0)
-        <div class="container mt-5">
+    @if(isset($professors) && count($professors) > 0)
+    <div class="container mt-5">
             <table class="table">
                 <thead class="bg-info">
                     <tr>

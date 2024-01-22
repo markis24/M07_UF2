@@ -7,23 +7,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body class="bg-light">
-    <div class="container mt-5">
-        <h1>Benvingut professor. El teu email és {{$email}}.</h1>
-    </div>
+
     <body class="bg-light">
+        @if(isset($alumnes) && count($alumnes) > 0)
+
         <div class="container mt-5">
             <h3>Llista de alumnes</h3>
             </div>
-        <div class="container mt-5">
-            <br>
-            <table class="table">
-                <thead class="bg-info">
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Email</th>
-                    </tr>
-                </thead>
+            <div class="container mt-5">
+                <table class="table">
+                    <thead class="bg-info">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Actiu</th>
+                            <th scope="col">Accions</th>
+                        </tr>
+                    </thead>
                 <tbody class="table-primary">
                     @foreach($alumnes as $alum)
                     <tr>
@@ -31,21 +32,27 @@
                         <td>{{ $alum['name'] }}</td>
                         <td>{{ $alum['email'] }}</td>
                         <td>{{ $alum['actiu'] }}</td>
-                        <td><a href="{{ route('signin.index') }}">Editar</a></td>
-                        <!--Cambiar estilo del boton con Boostrap--->
-                        <td><a href="{{ route('signin.index') }}"><button>Delete</button></a></td>
+                        <td>
+                            <a href="{{ route('alum.edit', $alum['id']) }}" class="btn btn-primary">Editar</a>
+                            <a href="{{ route('alum.destroy', $alum['id']) }}" class="btn btn-danger">Eliminar</a>
+                        </td>
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </div>
-
+        @else
         <div class="container mt-5">
-            <p class="mt-3"><a href="/prof/create">Crear</a></p>
+            <h3>No hi ha alumnes</h3>
         </div>
-            <div class="container mt-5">
-            <p class="mt-3"><a href="{{ route('signin.index') }}">Log out</a></p>
-            </div>
+    @endif
+    <div class="container mt-5">
+        <p class="mt-3"><a href="{{ route('alum.create') }}" class="btn btn-primary">Crear</a></p>
+    </div>
+
+    <div class="container mt-5">
+        <p class="mt-3"><a href="{{ route('signin.index') }}" class="btn btn-danger">Log Out</a></p>
+    </div>
     <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>

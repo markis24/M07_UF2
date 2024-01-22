@@ -53,4 +53,10 @@ Route::controller(TeacherController::class)->group(function () {
 });
 
 Route::controller(StudentController::class)->group(function () {
-});
+        Route::get('/alum', 'index')->name('alum.index');
+        Route::get('/alum/edit/{id}', 'edit')->name('alum.edit');
+        Route::get('/alum/create', 'create')->name('alum.create');
+        Route::post('/alum', 'store')->name('alum.store');
+        Route::put('/alum/{id}', 'update')->name('alum.update');
+        Route::delete('alum/{id}', 'destroy')->name('alum.destroy');
+    });

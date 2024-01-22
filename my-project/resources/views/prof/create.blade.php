@@ -31,9 +31,9 @@
             <div class="form-group">
                 <label for="rol">Rol</label>
                 <select name="rol" id="rol" class="form-control">
-                    <option value="alumnat">Alumne</option>
-                    <option value="professorat" selected>Professor</option>
-                    <option value="administrador">Administrador</option>
+                    <option value="alumne">Alumne</option>
+                    <option value="professor" selected>Professor</option>
+                    <option value="admin">Administrador</option>
                 </select>
             </div>
             <div class="form-group form-check">
