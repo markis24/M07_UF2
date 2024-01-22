@@ -26,6 +26,7 @@
    - PAGINA DEL ADMINISTRADOR
   
    - ![alt](img/Pagina_administrador.png)
+   - ![alt](my-project/img/Pagina_administrador.png)
 
    - NOTA IMPORTANTE:
 
