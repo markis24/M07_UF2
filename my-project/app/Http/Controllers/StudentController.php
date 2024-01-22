@@ -109,6 +109,7 @@ class StudentController extends Controller
         }
 
         $usuari->delete();
-        return view("users.professor");
+        return redirect()->route('alum.index');
+
     }
 }

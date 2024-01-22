@@ -107,6 +107,6 @@ class TeacherController extends Controller
         }
 
         $usuari->delete();
-        return view("admin.centre");
+        return redirect()->route('prof.index');
     }
 }
