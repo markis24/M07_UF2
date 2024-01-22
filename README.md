@@ -25,7 +25,7 @@
      
    - PAGINA DEL ADMINISTRADOR
   
-   - [https://github.com/markis24/M07_UF2/my-project/img/Paginaadministrador.png]
+   - [https://github.com/markis24/M07_UF2/my-project/img/Pagina administrador.png] 
 
    - NOTA IMPORTANTE:
 
