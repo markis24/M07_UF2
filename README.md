@@ -21,8 +21,13 @@
 3. **Para usuarios profesores:**
    - Realizar el mismo proceso que el administrador.
    - Gestionar a través de un CRUD los usuarios que sean alumnos.
+
+     
+   - PAGINA DEL ADMINISTRADOR
   
-NOTA IMPORTANTE:
+   - [https://github.com/markis24/M07_UF2/my-project/img/Pagina administrador.png]
+
+   - NOTA IMPORTANTE:
 
 - La creación debe utilizar el método POST.
 - La edición debe utilizar el método PUT.
