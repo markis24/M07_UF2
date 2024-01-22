@@ -12,6 +12,9 @@
     <div class="container mt-5">
         <form action="{{ route('alum.store')}}" method="post">
             @csrf 
+            <div class="container mt-5">
+                <h3>Formulari per afegir un nou usuari alumne</h3>
+            </div>
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" />

@@ -3,31 +3,44 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <title>Formulario</title>
+    <title>Formulario Professor</title>
 </head>
+
 <body>
     <div class="container mt-5">
         <form action="{{ route('prof.store')}}" method="post">
-            @csrf 
+            @csrf
+            <div class="container mt-5">
+                <h3>Formulari per afegir un nou usuari professor</h3>
+            </div>
+
+            <!-- Name Input -->
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" />
             </div>
+
+            <!-- Surname Input -->
             <div class="form-group">
                 <label for="surname">Cognoms</label>
                 <input type="text" name="surname" id="surname" class="form-control" />
             </div>
+
+            <!-- Password Input -->
             <div class="form-group">
                 <label for="password">Contrasenya</label>
                 <input type="password" name="password" id="password" class="form-control" />
             </div>
+
+            <!-- Email Input -->
             <div class="form-group">
                 <label for="email">Correu electrònic</label>
                 <input type="text" name="email" id="email" class="form-control" />
             </div>
+
+            <!-- Role Selection -->
             <div class="form-group">
                 <label for="rol">Rol</label>
                 <select name="rol" id="rol" class="form-control">
@@ -36,15 +49,19 @@
                     <option value="admin">Administrador</option>
                 </select>
             </div>
+
+            <!-- Active Checkbox -->
             <div class="form-group form-check">
                 <input type="checkbox" name="actiu" id="actiu" value="1" class="form-check-input" />
-                <label class="form-check-label" for="active">Actiu</label>
+                <label class="form-check-label" for="actiu">Actiu</label>
             </div>
+
+            <!-- Submit Button -->
             <input type="submit" value="Guardar" class="btn btn-primary" />
         </form>
-        <p class="mt-3"><a href="{{ route('prof.index') }}">Tornar</a></p>
 
-        <!-- Enlace para volver a la pagina de incio administrador -->
+        <!-- Return Link -->
+        <p class="mt-3"><a href="{{ route('prof.index') }}">Tornar</a></p>
     </div>
 
     <!-- Bootstrap JS -->

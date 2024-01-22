@@ -14,6 +14,11 @@
         <form action="{{ route('alum.update', $alum->id) }}" method="post">
             @method("put")
             @csrf
+            <!-- Título del formulario -->
+            <div class="container mt-5">
+                <h2>Formulari per actualizar dades del alumne</h2>
+            </div>
+            <br>
             <div class="form-group">
                 <label for="name">Nom</label>
                 <input type="text" name="name" id="name" class="form-control" value="{{ $alum['name'] }}" />

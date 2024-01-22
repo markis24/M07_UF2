@@ -9,12 +9,11 @@
 </head>
 <body class="bg-light">
     <div class="container mt-5">
-        <!-- <h1>Benvingut administrador. El teu email és .</h1> -->
+        <h1>Pàgina del centre</h1>
     </div>
-    <div class="container mt-5">
-        <h3>Llista de professors</h3>
+    <div class="container mt-3">
+        <h4>Benvingut administrador</h4>
     </div>
-
     @if(isset($professors) && count($professors) > 0)
     <div class="container mt-5">
             <table class="table">
@@ -35,17 +34,21 @@
                             <td>{{ $prof['email'] }}</td>
                             <td>{{ $prof['actiu'] }}</td>
                             <td>
-                                <a href="{{ route('prof.edit', $prof['id']) }}" class="btn btn-primary">Editar</a>
-                                <a href="{{ route('prof.destroy', $prof['id']) }}" class="btn btn-danger">Eliminar</a>
-                            </td>
-                        </tr>
+                                <a href="{{ route('prof.edit', $prof['id']) }}" class="btn btn-outline-primary">Editar</a>
+                                
+                                <form action="{{ route('prof.destroy', $prof['id']) }}" method="post" style="display: inline;">
+                                    @method("delete")
+                                    @csrf
+                                    <button id="submit" type="submit" class="btn btn-outline-danger">Eliminar</button>
+                                </form>
+                            </td>    
                     @endforeach
                 </tbody>
             </table>
         </div>
     @else
         <div class="container mt-5">
-            <h3>No hi ha professors</h3>
+            <h1>No hi ha professors</h1>
         </div>
     @endif
 
