@@ -22,13 +22,18 @@
    - Realizar el mismo proceso que el administrador.
    - Gestionar a través de un CRUD los usuarios que sean alumnos.
 
-     
-   - PAGINA DEL ADMINISTRADOR
-  
-   - ![alt](my-project/img/Pagina_administrador.png)
-
    - NOTA IMPORTANTE:
 
 - La creación debe utilizar el método POST.
 - La edición debe utilizar el método PUT.
 - La eliminación debe utilizar el método DELETE.
+
+     
+   - PAGINA DEL ADMINISTRADOR
+  
+     ![alt](my-project/img/Pagina_administrador.png)
+
+   - VIDEO PRACTICA CRUD PRACTICA 5
+ 
+    ![alt](my-project/video/CRUD_P5.mp4)
+
